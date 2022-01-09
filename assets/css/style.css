@@ -1,0 +1,377 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::selection {
+  background-color: var(--color2);
+  color: var(--color1);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap");
+:root {
+  --color1: rgba(14, 0, 43, 0.515);
+  --color2: rgba(247, 251, 253, 0.748);
+}
+
+body {
+  background: #da4453;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #89216b, #da4453);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #89216b, #da4453);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.header-content {
+  height: 230px;
+  background: var(--color1);
+  border-radius: 10px 10px 0px 0px;
+  margin: 0 auto;
+  padding: 10px;
+  width: calc(100% - 50px);
+  backdrop-filter: blur(10px);
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+.img-card {
+  width: 200px;
+  height: 200px;
+  background-image: url("../img/profile-pic.png");
+  background-size: cover;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  position: relative;
+  transition: 0.4s;
+}
+
+.social-links {
+  filter: invert(1);
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%);
+  opacity: 0.3;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.6s;
+}
+
+.feather-sub {
+  vertical-align: middle;
+  margin-left: 10px;
+  color: var(--color1);
+  opacity: 0.7;
+}
+
+.feather-main {
+  vertical-align: middle;
+  margin-left: 5px;
+  color: var(--color2);
+  opacity: 0.7;
+}
+
+.rotate {
+  transform: rotate(45deg);
+}
+
+.img-card:hover + .social-links,
+.social-links:hover {
+  opacity: 1;
+}
+
+.presentation {
+  max-width: 60%;
+}
+
+h2 {
+  font-size: 3rem;
+  color: var(--color2);
+  font-family: "Noto Sans Mono", monospace;
+}
+
+h3 {
+  color: var(--color2);
+  font-family: "Noto Sans Mono", monospace;
+  text-align: center;
+}
+
+.presentation p {
+  color: var(--color2);
+  font-family: "Noto Sans Mono", monospace;
+  padding-top: 40px;
+  text-align: justify;
+}
+
+.details {
+  background: var(--color1);
+  border-radius: 0px 0px 10px 10px;
+  margin: 0 auto;
+  padding: 30px;
+  width: calc(100% - 50px);
+  backdrop-filter: blur(10px);
+  max-width: 1200px;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.4s;
+  display: grid;
+  margin-bottom: 15px;
+}
+
+.header-content:hover + .details,
+.details:hover {
+  opacity: 1;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.show {
+  font-family: "Noto Sans Mono", monospace;
+  color: var(--color2);
+  font-size: 1.6rem;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  cursor: pointer;
+  border: none;
+  user-select: none;
+}
+
+.sub-show {
+  font-family: "Noto Sans Mono", monospace;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  cursor: pointer;
+  border: none;
+  font-size: 1.1rem;
+}
+
+.active,
+.show:hover {
+  background-color: var(--color2);
+  color: var(--color1);
+  transition: 0.4s;
+}
+
+.technos-content{
+    background-color: var(--color2);
+    color: var(--color1);
+    display: none;
+    transition: 0.4s;
+    padding-top: 10px;
+    font-family: "Noto Sans Mono", monospace;
+    padding-bottom: 20px;
+    user-select: none;
+  }
+
+.experiences-content,
+.formations-content,
+.contact-content {
+  background-color: var(--color2);
+  color: var(--color1);
+  display: none;
+  transition: 0.4s;
+  padding-left: 30px;
+  font-family: "Noto Sans Mono", monospace;
+  padding-bottom: 20px;
+  user-select: none;
+}
+
+.experiences-content li,
+.formations-content li,
+.technos-content li,
+.contact-content li {
+  padding: 10px 10px 10px 0px;
+  user-select: none;
+}
+
+.sub-content {
+  color: var(--color1);
+  display: none;
+  transition: 0.4s;
+  padding: 10px 10px 10px 0px;
+}
+
+.technos-content {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.technos-content img {
+  filter: grayscale(75);
+  transition: 0.5s;
+  border-radius: 50%;
+}
+
+.technos-content img:hover {
+  filter: grayscale(0);
+}
+
+.project-content {
+  background-color: var(--color2);
+  color: var(--color1);
+  display: none;
+  transition: 0.4s;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+.img-project-container img {
+  padding-top: 15px;
+  -webkit-filter: grayscale(60%);
+  filter: grayscale(60%);
+  opacity: 60%;
+  transition: 0.6s;
+  border-radius: 50%;
+}
+
+.img-project-container {
+  position: relative;
+  font-family: "Noto Sans Mono", monospace;
+  color: rgba(0, 0, 0, 0.624);
+  text-align: center;
+}
+
+.img-project-container img:hover {
+  -webkit-filter: grayscale(5%);
+  filter: grayscale(5%);
+  opacity: 100%;
+}
+
+.contact-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.contact-form input {
+  text-align: center;
+  width: 60%;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: "Noto-Mono-Sans";
+}
+
+.contact-form label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+textarea {
+  resize: none;
+  outline: none;
+  padding: 10px;
+  text-align: justify;
+  opacity: 0.7;
+  width: 400px;
+  height: 300px;
+}
+
+button {
+  margin-top: 5px;
+  background-color: white;
+  color: black;
+  border: 3px solid rgba(26, 4, 4, 0.487);
+  padding: 5px;
+  border-radius: 1px;
+  font-family: Tahoma;
+  width: 30%;
+  font-size: 1rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.2ch;
+  text-align: center;
+}
+
+button:hover {
+  background-color: var(--color1);
+  color: white;
+  cursor: pointer;
+}
+
+li a {
+    text-decoration: none;
+    background-color:var(--color2);
+    color: var(--color1)
+}
+
+li a:hover {
+    text-decoration: none;
+    background-color:var(--color1);
+    color: var(--color2)
+}
+
+
+@media (max-width: 1100px) {
+  .formation-content,
+  .project-content,
+  .experiences-content,
+  .technos-content {
+    flex-wrap: wrap;
+  }
+  .technos-content img {
+    padding: 7px;
+  }
+}
+
+@media (max-width: 720px) {
+  .header-content {
+    flex-direction: column-reverse;
+    height: 500px;
+  }
+  h2 {
+    font-size: 2.7rem;
+    color: var(--color2);
+    font-family: "Noto Sans Mono", monospace;
+    text-align: center;
+    margin-left:-10px;
+  }
+  h3 {
+    color: var(--color2);
+    font-family: "Noto Sans Mono", monospace;
+    text-align: center;
+    padding-top: 10px;
+  }
+  .presentation p {
+    color: var(--color2);
+    font-family: "Noto Sans Mono", monospace;
+    padding-top: 20px;
+    text-align: center;
+  }
+  .presentation {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 779px) {
+  textarea {
+    width: 100%;
+  }
+  button {
+      font-size:0.7rem;
+  }
+  .img-project-container img {
+      width:90%;
+  }
+  .details {
+      opacity:1;
+  }
+}
